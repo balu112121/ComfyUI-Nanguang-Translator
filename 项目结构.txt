@@ -1,0 +1,16 @@
+ComfyUI-Nanguang-Translator/
+├── __init__.py
+├── nodes.py
+├── requirements.txt
+├── README.md
+├── LICENSE
+├── example_workflows/
+│   ├── basic_translation_workflow.json
+│   └── advanced_translation_workflow.json
+├── web/
+│   ├── logo.png
+│   └── js/
+│       └── nanguang_translator.js
+└── images/
+    ├── node_preview.png
+    └── workflow_example.png

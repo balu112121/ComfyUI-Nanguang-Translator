@@ -1,0 +1,53 @@
+{
+  "1": {
+    "inputs": {
+      "text": "A beautiful sunset over the mountains with golden rays shining through the clouds.",
+      "clip": ["CLIP", 0]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "文本输入"
+    }
+  },
+  "2": {
+    "inputs": {
+      "输入文本": ["1", 0],
+      "预处理模式": "全部处理",
+      "大小写转换": "句子模式",
+      "最大长度": 500,
+      "是否显示统计": "是"
+    },
+    "class_type": "TextPreprocessorNode",
+    "_meta": {
+      "title": "文本预处理工具"
+    }
+  },
+  "3": {
+    "inputs": {
+      "待翻译文本": ["2", 0],
+      "翻译开关": "开启",
+      "源语言选择": "英语",
+      "目标语言选择": "中文",
+      "百度翻译APP_ID": "您的APP_ID",
+      "百度翻译密钥": "您的密钥",
+      "翻译模式": "常规翻译",
+      "翻译速度": "标准",
+      "是否显示详情": "是",
+      "最大重试次数": 3
+    },
+    "class_type": "BaiduTranslatorNode",
+    "_meta": {
+      "title": "百度翻译小助手"
+    }
+  },
+  "4": {
+    "inputs": {
+      "text": ["3", 0],
+      "clip": ["CLIP", 0]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "翻译结果输出"
+    }
+  }
+}

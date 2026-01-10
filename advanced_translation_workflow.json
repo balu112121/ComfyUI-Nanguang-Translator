@@ -1,0 +1,252 @@
+{
+  "1": {
+    "inputs": {
+      "text": "Technical Documentation Translation Example:\n\n1. The main() function initializes the system.\n2. The algorithm processes input data through multiple layers.\n3. Error handling is implemented using try-catch blocks.\n4. The framework supports asynchronous operations.\n5. Database connection pools are managed automatically.",
+      "clip": ["CLIP", 0]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "技术文档输入"
+    }
+  },
+  "2": {
+    "inputs": {
+      "text": "文学翻译示例：\n\n落霞与孤鹜齐飞，秋水共长天一色。\n渔舟唱晚，响穷彭蠡之滨；雁阵惊寒，声断衡阳之浦。\n\n人生若只如初见，何事秋风悲画扇。\n等闲变却故人心，却道故人心易变。",
+      "clip": ["CLIP", 0]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "文学文本输入"
+    }
+  },
+  "3": {
+    "inputs": {
+      "text": "批量翻译示例：\n\n第一行：Hello, world!\n第二行：How are you today?\n第三行：This is a test for batch translation.\n第四行：We are using Baidu Translation API.\n第五行：The result will show line by line.",
+      "clip": ["CLIP", 0]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "批量翻译输入"
+    }
+  },
+  "4": {
+    "inputs": {
+      "输入文本": ["1", 0],
+      "预处理模式": "全部处理",
+      "大小写转换": "句子模式",
+      "最大长度": 1000,
+      "是否显示统计": "是"
+    },
+    "class_type": "TextPreprocessorNode",
+    "_meta": {
+      "title": "技术文档预处理"
+    }
+  },
+  "5": {
+    "inputs": {
+      "输入文本": ["2", 0],
+      "预处理模式": "去除换行",
+      "大小写转换": "保持原样",
+      "最大长度": 1000,
+      "是否显示统计": "是"
+    },
+    "class_type": "TextPreprocessorNode",
+    "_meta": {
+      "title": "文学文本预处理"
+    }
+  },
+  "6": {
+    "inputs": {
+      "输入文本": ["3", 0],
+      "预处理模式": "清洗空格",
+      "大小写转换": "保持原样",
+      "最大长度": 1000,
+      "是否显示统计": "是"
+    },
+    "class_type": "TextPreprocessorNode",
+    "_meta": {
+      "title": "批量文本预处理"
+    }
+  },
+  "7": {
+    "inputs": {
+      "待翻译文本": ["4", 0],
+      "翻译开关": "开启",
+      "源语言选择": "英语",
+      "目标语言选择": "中文",
+      "百度翻译APP_ID": "您的APP_ID",
+      "百度翻译密钥": "您的密钥",
+      "翻译模式": "专业术语",
+      "翻译速度": "高质量",
+      "是否显示详情": "是",
+      "最大重试次数": 3
+    },
+    "class_type": "BaiduTranslatorNode",
+    "_meta": {
+      "title": "技术文档翻译"
+    }
+  },
+  "8": {
+    "inputs": {
+      "待翻译文本": ["5", 0],
+      "翻译开关": "开启",
+      "源语言选择": "中文",
+      "目标语言选择": "英语",
+      "百度翻译APP_ID": "您的APP_ID",
+      "百度翻译密钥": "您的密钥",
+      "翻译模式": "文学翻译",
+      "翻译速度": "高质量",
+      "是否显示详情": "是",
+      "最大重试次数": 3
+    },
+    "class_type": "BaiduTranslatorNode",
+    "_meta": {
+      "title": "文学翻译"
+    }
+  },
+  "9": {
+    "inputs": {
+      "待翻译文本": ["6", 0],
+      "翻译开关": "开启",
+      "源语言选择": "英语",
+      "目标语言选择": "中文",
+      "百度翻译APP_ID": "您的APP_ID",
+      "百度翻译密钥": "您的密钥",
+      "翻译模式": "批量翻译",
+      "翻译速度": "快速",
+      "是否显示详情": "是",
+      "最大重试次数": 3
+    },
+    "class_type": "BaiduTranslatorNode",
+    "_meta": {
+      "title": "批量翻译"
+    }
+  },
+  "10": {
+    "inputs": {
+      "待翻译文本": ["7", 0],
+      "翻译开关": "开启",
+      "源语言选择": "中文",
+      "目标语言选择": "日语",
+      "百度翻译APP_ID": "您的APP_ID",
+      "百度翻译密钥": "您的密钥",
+      "翻译模式": "常规翻译",
+      "翻译速度": "标准",
+      "是否显示详情": "是",
+      "最大重试次数": 3
+    },
+    "class_type": "BaiduTranslatorNode",
+    "_meta": {
+      "title": "中文转日语"
+    }
+  },
+  "11": {
+    "inputs": {
+      "待翻译文本": ["8", 0],
+      "翻译开关": "开启",
+      "源语言选择": "英语",
+      "目标语言选择": "法语",
+      "百度翻译APP_ID": "您的APP_ID",
+      "百度翻译密钥": "您的密钥",
+      "翻译模式": "常规翻译",
+      "翻译速度": "标准",
+      "是否显示详情": "是",
+      "最大重试次数": 3
+    },
+    "class_type": "BaiduTranslatorNode",
+    "_meta": {
+      "title": "英语转法语"
+    }
+  },
+  "12": {
+    "inputs": {
+      "text": ["7", 0],
+      "clip": ["CLIP", 0]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "技术翻译结果"
+    }
+  },
+  "13": {
+    "inputs": {
+      "text": ["8", 0],
+      "clip": ["CLIP", 0]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "文学翻译结果"
+    }
+  },
+  "14": {
+    "inputs": {
+      "text": ["9", 0],
+      "clip": ["CLIP", 0]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "批量翻译结果"
+    }
+  },
+  "15": {
+    "inputs": {
+      "text": ["10", 0],
+      "clip": ["CLIP", 0]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "中文转日语结果"
+    }
+  },
+  "16": {
+    "inputs": {
+      "text": ["11", 0],
+      "clip": ["CLIP", 0]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "英语转法语结果"
+    }
+  },
+  "17": {
+    "inputs": {
+      "输入文本": ["7", 0],
+      "预处理模式": "去除标点",
+      "大小写转换": "全小写",
+      "最大长度": 500,
+      "是否显示统计": "是"
+    },
+    "class_type": "TextPreprocessorNode",
+    "_meta": {
+      "title": "翻译后处理"
+    }
+  },
+  "18": {
+    "inputs": {
+      "待翻译文本": ["17", 0],
+      "翻译开关": "开启",
+      "源语言选择": "中文",
+      "目标语言选择": "英语",
+      "百度翻译APP_ID": "您的APP_ID",
+      "百度翻译密钥": "您的密钥",
+      "翻译模式": "常规翻译",
+      "翻译速度": "快速",
+      "是否显示详情": "是",
+      "最大重试次数": 2
+    },
+    "class_type": "BaiduTranslatorNode",
+    "_meta": {
+      "title": "回译验证"
+    }
+  },
+  "19": {
+    "inputs": {
+      "text": "翻译工作流汇总：\n技术文档翻译已完成\n文学翻译已完成\n批量翻译已完成\n多语言转换已完成\n翻译后处理已完成",
+      "clip": ["CLIP", 0]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "工作流汇总"
+    }
+  }
+}
